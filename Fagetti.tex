@@ -1,0 +1,608 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[spanish]{babel}
+
+\title{Trabajo Práctico - Packet Tracer}
+\author{Nicolás Fagetti}
+\date{\today}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\newpage
+\section{Packet Tracer}
+\textbf{CISCO Packet Tracer es una herramienta de simulacion de redes de computadoras que permite aprender y practicar configuraciones de redes sin necesidad de tener equipos fisicos. Este programa permite crear redes de diferentes tipos, utilizando dispositivos virtuales del catalogo de CISCO como si trabajaramos en un laboratorio virtual. Posee redes de muestra predisenadas, aunque tambien podemos crear redes desde cero, incluso para practicar IoT y ciberseguridad.} \\
+
+
+\textbf{Packet Tracer brinda la posibilidad de trabajar con las redes tanto desde su aspecto logico (pudiendo visualizar simbolicamente los diferentes dispositivos y las conexiones entre ellos, asi como el transito de la informacion en forma de paquetes), como desde su aspecto fisico (al seleccionar el modo Fisico, que nos permite contemplar y analizar los dispositivos desde una representacion mas fiel a su apariencia real).} \\
+
+\subsection{La interfaz de usuario}
+\textbf{Entre las herramientas basicas, Packet Tracer posee una barra de menu tipica (crear, guardar y abrir archivos .pkt, modificar las preferencias de usuario -zoom in/out, tamano de fuente, colores, etc.-) y debajo de ella, 2 barras de herramientas con accesos directos y funcionalidades para manipular objetos y realizar dibujos.} \\
+
+\textbf{A continuacion, tenemos una barra de herramientas del entorno de trabajo, que posee 2 pestanas correspondientes a los modos fisico y logico de la topologia de la red. En cada una de ellas, podremos visualizar la red desde dichas perspectivas, asi como acceder a diferentes opciones.} \\
+
+\textbf{Llegando al final de la pantalla, veremos otra interfaz en la que podremos seleccionar 2 nuevos modos: Tiempo Real y Simulacion, junto a otros 2 botones para adelantar el tiempo o para reiniciar la red. El modo Tiempo Real muestra a la red funcionando normalmente, y el modo Simulacion permite manipular el tiempo y agregar paquetes de envio de datos en la red.} \\
+
+\textbf{En el fondo, tendremos, del lado izquierdo, una barra con los componentes de red (routers, switches, dispositivos finales, cables, hubs, etc.), desde donde podemos arrastrarlos y agregarlos a nuestro modelo de red. Una vez situados, podremos ingresar a cada uno de ellos y obtener mucha informacion sobre cada uno de los dispositivos de red, su configuracion, ademas de una interfaz de linea de comandos (CLI), los modulos que soporta, y una interfaz grafica en la cual poner y sacar dichos modulos.
+Del lado derecho, en cambio, tendremos una barra de escenario, donde podremos crear paquetes en la red para que viajen a traves de los diferentes dispositivos.} \\
+
+\section{Dispositivos finales}
+\subsection{PC}
+\begin{itemize}
+    \item Posee conexion bluetooth, entradas para microfono y auriculares, y puerto USB.
+    \item Posee una seccion con aplicaciones de escritorio.
+    \item Posee 1 solo slot disponible.
+\end{itemize}
+
+\textbf{Modulos:}
+\begin{itemize}
+    \item WMP300N
+    \item PT-HOST-NM-1AM
+    \item PT-HOST-NM-1CE
+    \item PT-HOST-NM-1CFE
+    \item PT-HOST-NM-1CGE
+    \item PT-HOST-NM-1FFE
+    \item PT-HOST-NM-1FGE
+    \item PT-HOST-NM-1W
+    \item PT-HOST-NM-1W-A
+    \item PT-HOST-NM-1W-AC
+    \item PT-HOST-NM-3G/4G
+    \item PT-HOST-NM-COVER
+    \item Entrada de Auriculares
+    \item Entrada de Microfono
+\end{itemize}
+
+\subsection{Laptop}
+\begin{itemize}
+    \item Posee conexion bluetooth, entradas para microfono y auriculares, y puerto USB.
+    \item Posee 1 slot disponible.
+    \item Posee una serie de aplicaciones de escritorio.
+\end{itemize}
+
+\textbf{Modulos:}
+\begin{itemize}
+    \item WPC300N
+    \item PT-LAPTOP-NM-1AM
+    \item PT-LAPTOP-NM-1CE
+    \item PT-LAPTOP-NM-1CFE
+    \item PT-LAPTOP-NM-1CGE
+    \item PT-LAPTOP-NM-1FFE
+    \item PT-LAPTOP-NM-1FGE
+    \item PT-LAPTOP-NM-1W
+    \item PT-LAPTOP-NM-1W-A
+    \item PT-LAPTOP-NM-3G/4G
+\end{itemize}
+
+\subsection{Servidores}
+
+\subsubsection{Server-PT}
+\begin{itemize}
+    \item Posee 2 slots disponibles.
+    \item Posee servicios HTTP, DHCP, DHCPv6, TFTP, DNS, SYSLOG, AAA, NTP, EMAIL, FTP, IoT (montado sobre HTTP), manejo de VM y Radius EAP.
+    \item Posee una serie de aplicaciones de escritorio.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item WMP300N
+    \item PT-HOST-NM-1CE
+    \item PT-HOST-NM-1CFE
+    \item PT-HOST-NM-1CGE
+    \item PT-HOST-NM-1FFE
+    \item PT-HOST-NM-1FGE
+    \item PT-HOST-NM-1W
+    \item PT-HOST-NM-1W-A
+    \item PT-HOST-NM-1W-AC
+    \item PT-HOST-NM-3G/4G
+    \item PT-HOST-NM-COVER
+\end{itemize}
+
+\subsubsection{Meraki Server}
+\begin{itemize}
+    \item Posee 2 slots disponibles.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item WMP300N
+    \item PT-HOST-NM-1CE
+    \item PT-HOST-NM-1CFE
+    \item PT-HOST-NM-1CGE
+    \item PT-HOST-NM-1FFE
+    \item PT-HOST-NM-1FGE
+    \item PT-HOST-NM-1W
+    \item PT-HOST-NM-1W-A
+    \item PT-HOST-NM-1W-AC
+    \item PT-HOST-NM-3G/4G
+    \item PT-HOST-NM-COVER
+\end{itemize}
+
+\section{Dispositivos de red}
+
+\subsection{Hubs}
+
+\subsubsection{Hub-PT}
+\begin{itemize}
+    \item Posee 10 slots disponibles.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item PT-REPEATER-NM-1CE
+    \item PT-REPEATER-NM-1CFE
+    \item PT-REPEATER-NM-1CGE
+    \item PT-REPEATER-NM-1FFE
+    \item PT-REPEATER-NM-1FGE
+\end{itemize}
+
+\subsubsection{Repeater-PT}
+\begin{itemize}
+    \item Posee 2 slots disponibles.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item PT-REPEATER-NM-1CE
+    \item PT-REPEATER-NM-1CFE
+    \item PT-REPEATER-NM-1CGE
+    \item PT-REPEATER-NM-1FFE
+    \item PT-REPEATER-NM-1FGE
+\end{itemize}
+
+\subsubsection{CoAxialSplitter-PT} 
+\textbf{}
+
+\subsection{Switches}
+
+\subsubsection{2960-24TT}
+\begin{itemize}
+    \item Posee 24 puertos FastEthernet, 2 puertos Gigabit Ethernet.
+\end{itemize}
+
+\subsubsection{Switch-PT}
+\begin{itemize}
+    \item Posee 10 slots disponibles.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item PT-SWITCH-NM-1CE
+    \item PT-SWITCH-NM-1CFE
+    \item PT-SWITCH-NM-1CGE
+    \item PT-SWITCH-NM-1FFE
+    \item PT-SWITCH-NM-1FGE
+\end{itemize}
+
+\subsubsection{3560-24PS (multicapa)}
+\begin{itemize}
+    \item Posee 24 puertos FastEthernet0, + 2 puertos Gigabit Ethernet.
+    \item Posee soporte para Routing.
+\end{itemize}
+
+\subsubsection{3650-24PS (multicapa)}
+\begin{itemize}
+    \item Soporta hasta 2 fuentes de alimentacion.
+    \item Posee 24 puertos Gigabit Ethernet, + 4 slots disponibles.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item GLC-LH-SMD
+    \item GLC-T
+    \item GLC-TE
+\end{itemize}
+
+\subsubsection{IE2000}
+\begin{itemize}
+    \item Posee 8 puertos Fast Ethernet, + 2 puertos Gigabit Ethernet.
+    \item Posee soporte para Routing.
+\end{itemize}
+
+\subsubsection{Bridge-PT}
+\begin{itemize}
+    \item Posee 2 slots disponibles.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item PT-SWITCH-NM-1CE
+    \item PT-SWITCH-NM-1CFE
+    \item PT-SWITCH-NM-1CGE
+    \item PT-SWITCH-NM-1FFE
+    \item PT-SWITCH-NM-1FGE
+\end{itemize}
+
+\subsubsection{2950-24}
+\begin{itemize}
+    \item Posee 24 puertos Fast Ethernet.
+\end{itemize}
+
+\subsubsection{2950T-24} 
+\begin{itemize}
+    \item Posee 24 puertos Fast Ethernet, + 2 puertos Gigabit Ethernet.
+\end{itemize}
+
+\textbf{}
+
+\subsection{Routers}
+
+\subsubsection{ISR4331}
+\begin{itemize}
+    \item Posee 2 slots para modulos disponibles.
+    \item Posee 3 puertos Gigabit Ethernet.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item NIM-2T
+    \item NIM-ES2-4
+    \item GLC-GE-100FX
+    \item GLC-LH-SMD
+    \item GLC-T
+    \item GLC-TE
+\end{itemize}
+
+\subsubsection{ISR4321}
+\begin{itemize}
+    \item Posee 2 slots para modulos disponibles.
+    \item Posee 2 puertos Gigabit Ethernet.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item NIM-2T
+    \item NIM-ES2-4
+    \item GLC-GE-100FX
+    \item GLC-LH-SMD
+\end{itemize}
+
+\subsubsection{1941}
+\begin{itemize}
+    \item Posee 2 slots para modulos disponibles.
+    \item Posee 2 puertos Gigabit Ethernet.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item HWIC-1GE-SFP
+    \item HWIC-2T
+    \item HWIC-4ESW
+    \item HWIC-8A
+    \item GLC-LH-SMD
+\end{itemize}
+
+\subsubsection{2901}
+\begin{itemize}
+    \item Posee 4 slots para modulos disponibles.
+    \item Posee 2 puertos Gigabit Ethernet.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item HWIC-1GE-SFP
+    \item HWIC-2T
+    \item HWIC-4ESW
+    \item HWIC-8A
+    \item GLC-LH-SMD
+\end{itemize}
+
+\subsubsection{2911}
+\begin{itemize}
+    \item Posee 4 slots para modulos disponibles.
+    \item Posee 3 puertos Gigabit Ethernet.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item HWIC-1GE-SFP
+    \item HWIC-2T
+    \item HWIC-4ESW
+    \item HWIC-8A
+    \item GLC-LH-SMD
+\end{itemize}
+
+\subsubsection{819HG-4G-IOX}
+\begin{itemize}
+    \item Posee 1 interfaz Gigabit Ethernet.
+    \item Posee 4 interfaces Fast Ethernet.
+    \item Posee 1 interfaz Ethernet.
+    \item Posee 1 interfaz Serial.
+    \item Posee 1 interfaz Virtual.
+    \item Posee 1 interfaz celular.
+    \item Posee soporte para Routing.
+\end{itemize}
+
+\subsubsection{819HGW}
+\begin{itemize}
+    \item Posee 1 interfaz Gigabit Ethernet.
+    \item Posee 4 interfaces Fast Ethernet.
+    \item Posee 1 interfaz Serial.
+    \item Posee 1 interfaz Wlan-Gigabit Ethernet.
+    \item Posee 1 interfaz celular.
+    \item Posee soporte para Routing.
+\end{itemize}
+
+\subsubsection{829}
+\begin{itemize}
+    \item Posee 2 interfaces Serial.
+    \item Posee 6 interfaces Gigabit Ethernet.
+    \item Posee 1 interfaz Wlan-GigabitEthernet
+    \item Posee 9 lineas de terminal.
+    \item Posee 2 interfaces celular.
+    \item Posee 1 AP embebido.
+    \item Posee soporte para Routing.
+    \item Posee 1 slot disponible.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item GLC-T
+    \item GLC-TE
+\end{itemize}
+
+\subsubsection{CGR1240}
+\begin{itemize}
+    \item Posee 1 interfaz de Radio 802.11.
+    \item Posee 4 interfaces Fast Ethernet.
+    \item Posee 3 interfaces Gigabit Ethernet.
+    \item Posee 6 lineas de terminal.
+    \item Posee 4 slots disponibles.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item GLC-FE-100FX-RGD: El 100BASE-FX SFP opera en puertos Fast Ethernet o Fast/Gigabit Ethernet de velocidad dual de conmutadores y enrutadores Cisco Industrial Ethernet y SmartGrid.
+    \item Adaptador de Energia del Router.
+\end{itemize}
+
+\subsubsection{Router-PT}
+\begin{itemize}
+    \item Posee 10 slots disponibles.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item PT-ROUTER-NM-1AM
+    \item PT-ROUTER-NM-1CE
+    \item PT-ROUTER-NM-1CFE
+    \item PT-ROUTER-NM-1CGE
+    \item PT-ROUTER-NM-1FFE
+    \item PT-ROUTER-NM-1FGE
+    \item PT-ROUTER-NM-1S
+    \item PT-ROUTER-NM-1SS
+\end{itemize}
+
+\subsubsection{1841}
+\begin{itemize}
+    \item Posee 2 slots disponibles.
+    \item Posee 2 interfaces Fast Ethernet/IEEE 802.3.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item HWIC-1GE-SFP
+    \item HWIC-2T
+    \item HWIC-4ESW
+    \item HWIC-8A
+    \item HWIC-AP-AG-B
+    \item WIC-1AM
+    \item WIC-1ENET
+    \item WIC-1T
+    \item WIC-2AM
+    \item WIC-2T
+    \item GLC-LH-SMD
+\end{itemize}
+
+\subsubsection{2620XM}
+\begin{itemize}
+    \item Posee 3 slots disponibles.
+    \item Posee 1 interfaz Fast Ethernet / IEEE 802.3.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item NM-1E
+    \item NM-1E2W
+    \item NM-1FE-FX
+    \item NM-1FE-TX
+    \item NM-1FE2W
+    \item NM-2E2W
+    \item NM-2FE2W
+    \item NM-2W
+    \item NM-4A/S
+    \item NM-4E
+    \item NM-8A/S
+    \item NM-8AM
+    \item WIC-1AM
+    \item WIC-1T
+    \item WIC-2AM
+    \item WIC-2T
+\end{itemize}
+
+\subsubsection{2621XM}
+\begin{itemize}
+    \item Posee 3 slots disponibles.
+    \item Posee 2 interfaces FastEthernet/IEEE 802.3.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item (Idem 2620XM)
+\end{itemize}
+
+\subsubsection{2811}
+\begin{itemize}
+    \item Posee 5 slots disponibles.
+    \item Posee 2 interfaces Fast Ethernet.
+    \item Posee soporte para Routing.
+\end{itemize}
+\textbf{Modulos:}
+\begin{itemize}
+    \item NM-1E
+    \item NM-1E2W
+    \item NM-1FE-FX
+    \item NM-1FE-TX
+    \item NM-1FE2W
+    \item NM-2E2W
+    \item NM-2W
+    \item NM-4A/S
+    \item NM-4E
+    \item NM-8A/S
+    \item NM-8AM
+    \item NM-ESW-161
+    \item HWIC-1GE-SFP
+    \item HWIC-2T
+    \item HWIC-4ESW
+    \item HWIC-8A
+    \item HWIC-AP-AG-B
+    \item WIC-1AM
+    \item WIC-1ENET
+    \item WIC-1T
+    \item WIC-2AM
+    \item WIC-2T
+    \item GLC-LH-SMD
+\end{itemize}
+
+\newpage
+\section{Cableado}
+\textbf{Tipos de cableado:}
+\begin{itemize}
+    \item Consola
+    \item Directo de cobre
+    \item Cruce de cobre
+    \item Fibra optica
+    \item Telefonico
+    \item Coaxil
+    \item Serial DCE
+    \item Serial DTE
+    \item Octal
+    \item Cable personalizado de IoT
+    \item Cable USB
+\end{itemize}
+
+\newpage
+\section{Descripcion de los Modulos}
+\begin{itemize}
+    \item WMP300N: proporciona una interfaz inalámbrica de 2,4 GHz adecuada para la conexión a redes inalámbricas. El módulo admite protocolos que utilizan Ethernet para el acceso LAN.
+    \item WPC300N: idem WMP300N.
+    
+    \item PT-HOST-NM-1AM: cuenta con conectores duales RJ-11, que se utilizan para conexiones de servicio telefónico básico. El WIC-1AM utiliza un puerto para la conexión a una línea telefónica estándar y el otro puerto se puede conectar a un teléfono analógico básico para usarlo cuando el módem está inactivo.
+    \item PT-LAPTOP-NM-1AM: idem PT-HOST-NM-1AM.
+    \item PT-ROUTER-NM-1AM: idem PT-HOST-NM-1AM.
+    \item WIC-1AM: idem PT-HOST-NM-1AM.
+    
+    \item PT-HOST-NM-1CE: cuenta con un único puerto Ethernet que puede conectar una red troncal LAN que también puede admitir seis conexiones PRI para agregar líneas ISDN o 24 puertos síncronos/asincrónicos.
+    \item PT-LAPTOP-NM-1CE: idem PT-HOST-NM-1CE.
+    \item PT-REPEATER-NM-1CE: idem PT-HOST-NM-1CE.
+    \item PT-SWITCH-NM-1CE: idem PT-HOST-NM-1CE.
+    \item PT-ROUTER-NM-1CE: idem PT-HOST-NM-1CE.
+    \item NM-1E: idem PT-HOST-NM-1CE.
+    
+    \item PT-HOST-NM-1CFE: proporciona una interfaz Fast-Ethernet para usar con medios de cobre. Ideales para una amplia gama de aplicaciones LAN, los módulos de red Fast Ethernet admiten muchas funciones y estándares de interconexión en red. Los módulos de red de un solo puerto ofrecen Ethernet 10/100BaseTX o 100BaseFX con detección automática. La versión TX (cobre) admite la implementación de LAN virtual (VLAN).
+    \item PT-LAPTOP-NM-1CFE: idem PT-HOST-NM-1CFE.
+    \item PT-SWITCH-NM-1CFE: idem PT-HOST-NM-1CFE.
+    \item PT-ROUTER-NM-1CFE: idem PT-HOST-NM-1CFE.
+    
+    \item PT-HOST-NM-1CGE: proporciona conectividad de cobre Gigabit Ethernet para enrutadores de acceso. El módulo es compatible con los enrutadores de las series Cisco 2691, Cisco 3660, Cisco 3725 y Cisco 3745. Este módulo de red tiene una ranura de convertidor de interfaz gigabit (GBIC) para transportar cualquier GBIC Cisco óptico o de cobre estándar.
+    \item PT-LAPTOP-NM-1CGE: idem PT-HOST-NM-1CGE.
+    \item PT-REPEATER-NM-1CGE: idem PT-HOST-NM-1CGE.
+    \item PT-SWITCH-NM-1CGE: idem PT-HOST-NM-1CGE.
+    \item PT-ROUTER-NM-1CGE: idem PT-HOST-NM-1CGE.
+    
+    \item PT-HOST-NM-1FFE: proporciona una interfaz Fast-Ethernet para usar con medios de fibra. Ideales para una amplia gama de aplicaciones LAN, los módulos de red Fast Ethernet admiten muchas funciones y estándares de interconexión en red. Los módulos de red de un solo puerto ofrecen Ethernet 10/100BaseTX o 100BaseFX con detección automática.
+    \item PT-LAPTOP-NM-1FFE: idem PT-HOST-NM-1FFE.
+    \item PT-REPEATER-NM-1FFE: idem PT-HOST-NM-1FFE.
+    \item PT-SWITCH-NM-1FFE: idem PT-HOST-NM-1FFE.
+    \item PT-ROUTER-NM-1FFE: idem PT-HOST-NM-1FFE.
+    
+    \item PT-HOST-NM-1FGE: proporciona conectividad óptica Gigabit Ethernet para enrutadores de acceso. El módulo es compatible con los enrutadores de las series Cisco 2691, Cisco 3660, Cisco 3725 y Cisco 3745. Este módulo de red tiene una ranura de convertidor de interfaz gigabit (GBIC) para transportar cualquier GBIC Cisco óptico o de cobre estándar.
+    \item PT-LAPTOP-NM-1FGE: idem PT-HOST-NM-1FGE.
+    \item PT-REPEATER-NM-1FGE: idem PT-HOST-NM-1FGE.
+    \item PT-SWITCH-NM-1FGE: idem PT-HOST-NM-1FGE.
+    \item PT-ROUTER-NM-1FGE: idem PT-HOST-NM-1FGE.
+    
+    \item PT-HOST-NM-1W: proporciona una interfaz inalámbrica de 2,4 GHz adecuada para la conexión a redes inalámbricas. El módulo admite protocolos que utilizan Ethernet para el acceso LAN.
+    \item PT-LAPTOP-NM-1W: idem PT-HOST-NM-1W.
+    
+    \item PT-HOST-NM-1W-A: proporciona una interfaz inalámbrica de 5 GHz adecuada para la conexión a redes inalámbricas 802.11a. El módulo admite protocolos que utilizan Ethernet para el acceso LAN.
+    \item PT-LAPTOP-NM-1W-A: idem PT-HOST-NM-1W-A.
+    
+    \item PT-HOST-NM-1W-AC: proporciona una interfaz inalámbrica de 5 GHz adecuada para la conexión a redes inalámbricas 802.11ac o 802.11b/g/n en la banda de 2,4 GHz. El módulo admite protocolos que utilizan Ethernet para el acceso LAN.
+    
+    \item PT-HOST-NM-3G/4G: proporciona una interfaz celular adecuada para la conexión a redes 3G/4G.
+    \item PT-LAPTOP-NM-3G/4G: idem PT-HOST-NM-3G/4G.
+
+    \item PT-HOST-NM-COVER: La placa de cubierta proporciona protección a los componentes electrónicos internos. También ayuda a mantener una refrigeración adecuada al normalizar el flujo de aire.
+
+    \item GLC-LH-SMD: El 1000BASE-LX/LH SFP opera en puertos Gigabit Ethernet de conmutadores y enrutadores Cisco Industrial Ethernet y SmartGrid.
+
+    \item GLC-T: El 1000BASE-T SFP funciona con cableado de cobre de par trenzado sin blindaje de categoría 5 estándar con longitudes de enlace de hasta 100 m (328 pies). Los módulos Cisco 1000BASE-T SFP admiten negociación automática 10/100/1000 y MDI/MDIX automático.
+
+    \item GLC-TE: El 1000BASE-T SFP funciona con cableado de cobre de par trenzado sin blindaje de categoría 5 estándar con longitudes de enlace de hasta 100 m (328 pies). Los módulos Cisco 1000BASE-TE SFP admiten negociación automática 10/100/1000 y MDI/MDIX automático. Los módulos Cisco 1000BASE-TE SFP pueden funcionar en un amplio rango de temperaturas ambiente sin ningún daño.
+
+    \item NIM-2T: El NIM-2T es un NIM serie síncrono multiprotocolo de 2 puertos.
+
+    \item NIM-ES2-4: El NIM-ES2-4 proporciona cuatro puertos de conmutación.
+
+    \item GLC-GE-100FX: Módulo SFP 100BASE-FX para puertos Gigabit Ethernet, longitud de onda 1310 nm, 2 km sobre MMF.
+
+    \item HWIC-1GE-SFP: El HWIC-1GE-SFP es un HWIC de ancho único con una ranura conectable de factor de forma pequeño (SFP). La ranura SFP se puede llenar con SFP Gigabit Ethernet ópticos y de cobre de Cisco para proporcionar conectividad Gigabit Ethernet de 1 puerto en todos los enrutadores de servicios integrados de Cisco.
+
+    \item HWIC-2T: La HWIC-2T es una tarjeta de interfaz WAN serie de alta velocidad de 2 puertos de Cisco que proporciona 2 puertos serie.
+
+    \item HWIC-4ESW: El HWIC-4ESW proporciona cuatro puertos de conmutación.
+
+    \item HWIC-8A: El HWIC-8A proporciona hasta ocho conexiones EIA-232 asíncronas a puertos de consola.
+
+    \item HWIC-AP-AG-B: El módulo HWIC-AP-AG-B es una tarjeta de interfaz WAN de alta velocidad que proporciona funcionalidad de punto de acceso integrado en los enrutadores de servicios integrados Cisco 1800 (Modular), Cisco 2800 y Cisco 3800. Admite radios de banda única 802.11b/g o de banda dual 802.11a/b/g.
+
+    \item WIC-1ENET: La WIC-1ENET es una tarjeta de interfaz Ethernet de 10 Mbps de un solo puerto, para uso con LAN Ethernet 10BASE-T.
+
+    \item WIC-1T: El WIC-1T proporciona una conexión serie de un solo puerto a sitios remotos o dispositivos de red serie heredados, como concentradores de control de enlace de datos síncronos (SDLC), sistemas de alarma y dispositivos de paquetes a través de SONET (POS).
+
+    \item WIC-2AM -> La tarjeta WIC-2AM cuenta con conectores RJ-11 duales, que se utilizan para conexiones de servicio telefónico básico. El WIC-2AM tiene dos puertos de módem para permitir múltiples conexiones de comunicación de datos.
+
+    \item WIC-2T: Las tarjetas de interfaz WAN (WIC) de puerto serie dual cuentan con el nuevo conector serie inteligente compacto y de alta densidad de Cisco para admitir una amplia variedad de interfaces eléctricas cuando se utilizan con el cable de transición adecuado. Se requieren dos cables para soportar los dos puertos del WIC. Cada puerto en un WIC es una interfaz física diferente y puede admitir diferentes protocolos, como el protocolo punto a punto (PPP) o Frame Relay y equipo terminal de datos/equipo de comunicaciones de datos (DTE/DCE).
+
+    \item GLC-FE-100FX-RGD: El 100BASE-FX SFP opera en puertos Fast Ethernet o Fast/Gigabit Ethernet de velocidad dual de conmutadores y enrutadores Cisco Industrial Ethernet y SmartGrid.
+
+    \item Adaptador de Energia del Router.
+
+    \item PT-ROUTER-NM-1S: El PT-ROUTER-NM-1S proporciona una conexión serie de un solo puerto a sitios remotos o dispositivos de red serie heredados, como concentradores de control de enlace de datos síncronos (SDLC), sistemas de alarma y dispositivos de paquetes a través de SONET (POS).
+
+    \item PT-ROUTER-NM-1SS: Las tarjetas de interfaz WAN (WIC) de puerto serie dual cuentan con el nuevo conector serie inteligente compacto y de alta densidad de Cisco para admitir una amplia variedad de interfaces eléctricas cuando se utilizan con el cable de transición adecuado. Se requieren dos cables para soportar los dos puertos del WIC. Cada puerto en un WIC es una interfaz física diferente y puede admitir diferentes protocolos, como el protocolo punto a punto (PPP) o Frame Relay y equipo terminal de datos/equipo de comunicaciones de datos (DTE/DCE).
+
+    \item NM-1E2W: El NM-1E2W proporciona un único puerto Ethernet con dos ranuras WIC que pueden admitir una única LAN Ethernet, junto con dos líneas de backhaul serial/ISDN, y aún así permitir múltiples seriales o ISDN en el mismo chasis.
+
+    \item NM-1FE-FX: El módulo NM-1FE-FX proporciona una interfaz Fast-Ethernet para usar con medios de fibra. Ideales para una amplia gama de aplicaciones LAN, los módulos de red Fast Ethernet admiten muchas funciones y estándares de interconexión en red. Los módulos de red de un solo puerto ofrecen Ethernet 10/100BaseTX o 100BaseFX con detección automática.
+
+    \item NM-1FE-TX: El módulo NM-1FE-TX proporciona una interfaz Fast-Ethernet para usar con medios de cobre. Ideales para una amplia gama de aplicaciones LAN, los módulos de red Fast Ethernet admiten muchas funciones y estándares de interconexión en red. Los módulos de red de un solo puerto ofrecen Ethernet 10/100BaseTX o 100BaseFX con detección automática. La versión TX (cobre) admite la implementación de LAN virtual (VLAN).
+
+    \item NM-1FE2W: El módulo NM-1FE2W proporciona una interfaz Fast-Ethernet para usar con medios de cobre, además de dos ranuras de expansión para tarjetas de interfaz Wan. Ideales para una amplia gama de aplicaciones LAN, los módulos de red Fast Ethernet admiten muchas funciones y estándares de interconexión en red. Los módulos de red de un solo puerto ofrecen Ethernet 10/100BaseTX o 100BaseFX con detección automática. La versión TX (cobre) admite la implementación de LAN virtual (VLAN).
+
+    \item NM-2E2W: El NM-2E2W proporciona dos puertos Ethernet con dos ranuras WIC que pueden admitir dos LAN Ethernet, junto con dos líneas de backhaul serial/ISDN, y aún permiten múltiples seriales o ISDN en el mismo chasis.
+
+    \item NM-2FE2W: El módulo NM-2FE2W proporciona dos interfaces Fast-Ethernet para usar con medios de cobre, además de dos ranuras de expansión para tarjetas de interfaz Wan. Ideales para una amplia gama de aplicaciones LAN, los módulos de red Fast Ethernet admiten muchas funciones y estándares de interconexión en red.
+
+    \item NM-2W: El módulo NM-2W proporciona dos ranuras de expansión para tarjetas de interfaz WAN. Se puede utilizar con una amplia gama de tarjetas de interfaz y admite una amplia gama de medios físicos y protocolos de red.
+
+    \item NM-4A/S: El módulo de red serie asíncrono/sincrónico de 4 puertos proporciona soporte multiprotocolo flexible, con cada puerto configurable individualmente en modo síncrono o asíncrono, ofreciendo soporte de marcado de medios mixtos en un solo chasis. Las aplicaciones para soporte asíncrono/síncrono incluyen: agregación WAN de baja velocidad (hasta 128 Kbps), soporte de módem de acceso telefónico, conexiones asíncronas o sincronizadas a puertos de administración de otros equipos y transporte de protocolos heredados como Bi-sync y SDLC.
+
+    \item NM-4E: El NM-4E cuenta con cuatro puertos Ethernet para soluciones multifunción que requieren Ethernet de mayor densidad que los módulos de red de medios mixtos.
+
+    \item NM-8A/S -> El módulo de red serie asíncrono/sincrónico de 8 puertos proporciona soporte multiprotocolo flexible, con cada puerto configurable individualmente en modo síncrono o asíncrono, ofreciendo soporte de marcado de medios mixtos en un solo chasis. Las aplicaciones para soporte asíncrono/síncrono incluyen: agregación WAN de baja velocidad (hasta 128 Kbps), soporte de módem de acceso telefónico, conexiones asíncronas o sincronizadas a puertos de administración de otros equipos y transporte de protocolos heredados como Bi-sync y SDLC.
+
+    \item NM-8AM -> El módulo de red de módem analógico V.92 integrado NM-8AM proporciona conectividad de servicio telefónico analógico rentable para servicio de acceso remoto (RAS) de baja densidad, acceso por módem de marcación y salida de fax, enrutamiento asíncrono de marcación bajo demanda ( DDR), además de respaldo de marcado y administración remota de enrutadores. Tanto la versión de 8 puertos como la de 16 puertos utilizan conectores RJ-11 para conectar los módems integrados a líneas telefónicas analógicas básicas en la red telefónica pública conmutada (PSTN) o sistemas de telefonía privada.
+\end{itemize}
+
+\newpage
+\section{Actividad Práctica}
+\textbf{ Para este apartado, he interconectado dos equipos (una laptop y una PC) utilizando un switch, para lo cual nos aseguramos que las conexiones de ambos equipos sean de tipo Ethernet, para poder conectarlas con un cable directo. } \\
+
+\textbf{ El switch utilizado es el que figura como "Switch-PT", que posee varios puertos Fast Ethernet y permite dicha conexion.
+Sin embargo, no he logrado que se establezca la conexion, seguramente por mi desconocimiento en la materia, aunque por lo que he llegado a investigar, debe ser un tema de configuracion del IP de los equipos. } \\
+
+\textbf{Sin dudas ha sido interesante explorar esta herramienta, y pienso que sera de enorme provecho para comprender las bases del funcionamiento de las redes de computadoras.}
+
+\newpage
+\section{Referencias}
+\begin{itemize}
+    \item CISCO Networking Academy - Introducción a Cisco Packet Tracer
+    \item Fuente del documento: https://github.com/moro1982/tp-packet-tracer
+\end{itemize}
+
+\end{document}
